@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App3.MainPage">
+
+    <StackLayout>
+        <Grid x:Name="sda" HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image x:Name="myImage" Source="cat.jpg" Grid.Column="0"></Image>
+            <Image Source="h6cyHAXvyF4.jpg" Grid.Column="1"></Image>
+        </Grid>
+        <Button x:Name="BtnAdd" Clicked="BtnAdd_Clicked" Margin="5" Text="Добавить"></Button>
+        <Button x:Name="BtnAddGalery" Clicked="BtnAddGalery_Clicked" Margin="5" Text="Галерея"></Button>
+        <ListView RowHeight="150" SeparatorVisibility="Default" SeparatorColor="Black" x:Name="LVPhotos">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                            <Image Margin="5" Source="{Binding}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
